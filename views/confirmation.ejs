@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Success</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <%- include('partials/header.ejs') %>
+  </header>
+  <main>
+    <div id="confirmation-paid" class="confirmation-message">
+      <h3 class="h3-confirm">Thank you for booking with us, <span class="name">
+          <%= name %>
+        </span>!</h3>
+      <p>Your payment was successful!</p>
+      <p>You have received an email with your booking information. </p>
+      <p>Have a look at our <span class="contact">Contact</span> details to find in the map where the parking spot is.
+      </p>
+      <p>Your booking REF: EIN<%= bookingId %>
+      </p>
+      <p>Price: €<%= totalPrice %>
+      </p>
+      <button class="buttons" id="new-booking-btn">Make Another Booking</button>
+    </div>
+  </main>
+  <footer>
+    <%- include('partials/footer.ejs',{address1, address2, address3,phone, contact_email}) %>
+
+  </footer>
+  <script>
+    // Verifica si la URL es "/confirm" cuando se carga la página
+    window.onload = function ()  {
+      // Comprueba si estamos en la página /confirm
+      if (window.location.pathname === '/confirmation') {
+        // Desplazarse a la sección con id "confirmation-paid"
+        const confirm = document.getElementById("confirmation-paid");
+        if (confirm) {
+          confirm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+    //header buttons functionality
+    document.getElementById('new-booking-btn').addEventListener('click', () => {
+      window.location.href = '/#form-box';
+
+    });
+    document.getElementById("book-spot").addEventListener("click", () =>{
+      window.location.href="/#form-box"
+    })
+    document.getElementById("faq-btn").addEventListener("click", () =>{
+      window.location.href="/#faqs-box"
+    })
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <%- include('partials/header.ejs') %>
+    </header>
+    <main>
+        <div id="cancel-box">
+            <h2 class="book-h2-form book-h2-cancel">Cancel Your Booking</h2>
+            <div class="paragraph paragraph-cancel-text">
+                <p> We understand that plans may change, so you can cancel your booking up to <strong><%= cancelation_days %>
+                        days </strong>before your arrival
+                    date without any extra charge.
+                <p>If the system doesn’t let you cancel it, unfortunately, it means it’s
+                    already too late.</p>
+                <p> We hope you understand that we need this time as a guarantee for your booking.</p>
+                <p>In the REF number you need to write the full number including. <strong> Ex: EIN1234</strong></p>
+            </div>
+
+            <form id="cancel-booking-form" action="/cancel-booking" method="POST">
+                <div id="response-message">
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="ref_number">REF number: <span>*</span></label>
+                        <input type="text" id="ref_number" name="ref_number" required>
+                        <p id="error-message" class="error-message" style="display: none;"></p>
+                    </div>
+                </div>
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+
+        </div>
+    </main>
+    <footer>
+        <%- include('partials/footer.ejs',{address1, address2, address3,phone, contact_email}) %>
+
+    </footer>
+    <script>
+        window.onload = function () {
+            // Comprueba si estamos en la página /confirm
+            const cancelBox = document.getElementById("cancel-box");
+            console.log(cancelBox); // Check if cancelBox is null or correctly selected
+            if (cancelBox) {
+                cancelBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                console.error('cancelBox element not found.');
+            }
+        };
+        document.getElementById("book-spot").addEventListener("click", () => {
+            window.location.href = "/#form-box"
+        })
+        document.getElementById("faq-btn").addEventListener("click", () => {
+            window.location.href = "/#faqs-box"
+        })
+        const newBtn = document.getElementById('new-booking-btn');
+        if (newBtn)
+            newBtn.addEventListener('click', () => {
+                window.location.href = '/#form-box';
+
+            });
+        document.getElementById('cancel-booking-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const refInput = document.getElementById('ref_number');
+            const refNumber = refInput.value.trim(); // Trim whitespace
+            const errorMessageElement = document.querySelector('.error-message');
+            const responseMessageElement = document.getElementById("response-message");
+
+            // Input validation
+            if (!refNumber) {
+                errorMessageElement.textContent = "REF number cannot be empty.";
+                errorMessageElement.style.display = "block";
+                confirmationTextElement.textContent = ""; // Clear confirmation text
+                return; // Stop further execution
+            }
+
+            if (!/^EIN\d+$/.test(refNumber)) {
+                errorMessageElement.textContent = "Invalid REF number. Please use the format EIN followed by digits (e.g., EIN123).";
+                errorMessageElement.style.display = "block";
+                confirmationTextElement.textContent = ""; // Clear confirmation text
+                return; // Stop further execution
+            }
+
+            // Clear previous errors
+            errorMessageElement.textContent = "";
+            errorMessageElement.style.display = "none";
+
+            try {
+                // Make the POST request
+                const response = await fetch('/cancel-booking', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ref_number: refNumber }),
+                });
+
+                const result = await response.json();
+                //console.log(result.response.json())
+                console.log("Server response:", result);
+                // Display appropriate messages based on response
+                if (response.ok) {
+                    responseMessageElement.textContent = result.message || "Booking successfully cancelled.";
+                    responseMessageElement.style.color = "green";
+                } else {
+                    responseMessageElement.textContent = result.message || "An error occurred. Please try again.";
+                    responseMessageElement.style.color = "red";
+                }
+                responseMessageElement.style.display = "block";
+            } catch (error) {
+                responseMessageElement.textContent = "Failed to connect to the server. Please try again later.";
+                responseMessageElement.style.color = "red";
+                responseMessageElement.style.display = "block";
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!-- Main Page for form and faq section -->
+<div id="form-box">
+    <h2 class="book-h2-form">Book Your Parking Spot</h2>
+    <p class="book-p-form">Secure parking at affordable rates. Fill in your details to book!</p>
+    <form id="booking-form" action="/book" method="POST">
+
+        <div class="row">
+
+            <div class="form-group">
+                <label for="arrival_date">Arrival Date <span>*</span></label>
+                <input type="date" id="arrival_date" name="arrival_date" required>
+                <p class="error-message"></p>
+            </div>
+            <div class="form-group">
+                <label for="departure_date">Departure Date <span>*</span></label>
+                <input type="date" id="departure_date" name="departure_date" required>
+                <p class="error-message"></p>
+            </div>
+        </div>
+        <div class="div-total-price">
+
+            <p id="price-display">
+                Total Price € 0
+            </p>
+            <p id="Selected-dates"></p>
+            <p id="days-display">
+                Total days reserved: 0
+            </p>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="arrival_time">Arrival Time <span>*</span></label>
+                <input type="time" placeholder="Arrival Time" id="arrival_time" name="arrival_time" required>
+                <p class="error-message" id="arrival-error"></p>
+            </div>
+            <div class="form-group">
+
+                <label for="departure_time">Departure Time <span>*</span></label>
+                <input type="time" id="departure_time" name="departure_time" required>
+                <p class="error-message" id="departure-error"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="name">Name <span>*</span></label>
+                <input type="text" placeholder="Your Name and Surname" id="name" name="name" required>
+                <p class="error-message" id="name-error"></p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" placeholder="Your Email" id="email" name="email" required>
+                <p class="error-message" id="email-error"></p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group">
+                <label for="car_brand">Car Brand <span>*</span></label>
+                <input type="text" placeholder="Car Brand" id="car_brand" name="car_brand" required>
+                <p class="error-message" id="brand-error"></p>
+            </div>
+            <div class="form-group">
+
+                <label for="car_color">Car Color <span>*</span></label>
+                <input type="text" placeholder="Car Color" id="car_color" name="car_color" required>
+                <p class="error-message" id="color-error"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="car_type">Car Type <span>*</span><a href="https://www.flaticon.com/free-icons/question"
+                        title="question icons"></a><img id="question-mark" src="/assets/icons/question.png"></img>
+                    <!-- <div id="question-mark"><a href="https://www.flaticon.com/free-icons/question"
+                            title="question icons"></a><img src="/assets/icons/question.png"></img></div> -->
+                </label>
+                <input type="text" placeholder="Car Type" id="car_type" name="car_type" required>
+                <p class="error-message" id="type-error"></p>
+                <div id="question-div" class="hidden">This is for entering the type of car, e.g., Sedan, SUV, Sportscar,
+                    Coupe.</div>
+            </div>
+            <div class="form-group">
+                <label for="license_plate">License Plate Number: <span>*</span></label>
+                <input type="text" placeholder="License Plate" id="license_plate" name="license_plate" required>
+                <p class="below-lisence">Make sure you write the
+                    correct license plate number</p>
+                <p class="error-message" id="license-error"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="select-option">Are you a business or legal entity? <br>Please choose, yes or no
+                    <span>*</span></label>
+
+                <select name="selece-option" id="select-option" required>
+                    <option value="0">---</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+                <p class="error-message" id="option-error" style="display: none; color: red;"></p>
+
+
+
+            </div>
+        </div>
+        <div id="company-section" style="display:none;">
+            <!-- Explanation paragraph -->
+            <p id="selection-info" class="hidden-text">You have selected Yes. Please fill out the company details below
+                to include them in your invoice.
+            </p>
+            <div class="row">
+                <div class="form-group ">
+                    <label for="companyName">Company Name <span>*</span></label>
+                    <input type="text" id="companyName" name="companyName" placeholder="Company name" required>
+                    <p class="error-message" id="company-name-error" style="display: none;"></p>
+                </div>
+                <div class="form-group ">
+                    <label for="companyAddress">Company Address <span>*</span></label>
+                    <input type="text" id="companyAddress" name="companyAddress" placeholder="Street" required>
+                    <p class="error-message" id="company-address-error" style="display: none;"></p>
+                    <input type="text" id="postalCode" name="postalCode" placeholder="Postal Code" required>
+                    <p class="error-message" id="postal-code-error" style="display: none;"></p>
+                    <input type="text" id="city" name="city" placeholder="City" required>
+                    <p class="error-message" id="city-error" style="display: none;"></p>
+                    <input type="text" id="country" name="country" placeholder="Country" required>
+                    <p class="error-message" id="country-error" style="display: none;"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group ">
+                    <label for="vatNumber">VAT Number (if applicable)</label>
+                    <input type="text" id="vatNumber" name="vatNumber" placeholder="VAT Number">
+
+                </div>
+                <div class="form-group ">
+                    <label for="kvkNumber">KVK Number (optional)</label>
+                    <input type="text" id="kvkNumber" name="kvkNumber" placeholder="KVK number">
+
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" id="submit-btn" disabled>Submit</button>
+    </form>
+    <!-- Shows error in extra inputs form -->
+    <div id="confirmation-message" style="display: none;">
+        <p id="confirmation-text"></p>
+    </div>
+</div>
+<section id="faqs-box">
+    <h4 class="title">Frequently Asked Questions</h4>
+    <div class="paragraph">
+        <p> We understand you might have questions about how parking works, bookings, or payments.
+            In this section, you'll find the most frequently asked questions from our customers. <br><br>
+            If you don’t find the answer you’re looking for, feel free to contact our <strong> <a href="#">customer
+                    service</a></strong>.
+            Our team is here to help!
+        </p>
+    </div>
+    <div id="faqs-div">
+
+        <% faqs.forEach((faq, i)=> { %> <!-- Loop through the faqs array -->
+            <div class="faq">
+                <div class="question ">
+                    <h6>
+                        <%= faq.question %>
+                    </h6> <!-- Display the question from the database -->
+                    <img src="/assets/icons/down-arrow.png" alt="Arrow Icon" class="arrow-icon">
+                </div>
+                <div class="answer">
+                    <p>
+                        <%= faq.answer %>
+                    </p> <!-- Display the answer from the database -->
+                </div>
+            </div>
+            <% }); %>
+    </div>
+</section>
+<img id="top-btn" src="/assets/icons/top-arrow.png" alt="">

@@ -1,0 +1,1675 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*error message style*/
+.error-message {
+    color: red;
+    font-size: 0.70rem;
+    margin-top: 8px;
+    /* position: absolute; Position error message below input */
+
+    /* width: 100%; */
+
+    /* Hidden by default */
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+
+    /* background-image: url(/assets/images/background-img.jpg);
+    
+    background-size: cover; /* Ensure the image covers the entire viewport */
+    /* background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    /* background-position: center; */
+
+    background-image: url(/assets/images/background-img.jpg);
+    background-position: center;
+    overflow-y: auto;
+    /* Permite desplazamiento vertical en toda la página */
+
+
+    /* animation: animatedBackground 1s ease-in-out; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+
+}
+
+header {
+    max-width: 70%;
+    margin: 0px auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* HEADER */
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+/* Navigation Bar Styling */
+#title-nav-bar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #333333; */
+    /* Add a background color */
+    border-bottom: 2px solid #000000;
+    background-image: url(assets/images/dark-concrete-textured-wall.jpg);
+    z-index: 1000;
+    /* Ensure it stays above other elements */
+    background-position: bottom;
+    transform: animatedBackground ease-in-out 1s;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/*Puts the nav on the cengter of the container*/
+/* #nav {
+    margin: 0;
+    padding: 0;
+    align-self: center; 
+  } */
+#nav ul {
+    display: flex;
+    list-style: none;
+}
+
+#nav li {
+    margin-left: 70px;
+    text-align: center;
+}
+
+#nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+#nav a:hover {
+    color: #00ADB5;
+    transition: all ease-in-out 290ms;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #00ADB5;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 290ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+    color: #3B1E54;
+}
+
+/* Image Section */
+#img-container {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    /* Adjusted height for the image section */
+    display: flex;
+    /* Flexbox to center content */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    overflow: hidden;
+
+
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/images/main-img3.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    z-index: 1;
+}
+
+#img-container .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 60px;
+    box-sizing: border-box;
+    color: #EEEEEE;
+    margin: 0px auto;
+}
+
+#img-container .left-content {
+    /* max-width: 40%; */
+    font-size: 25px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.left-content h1 {
+    font-size: 2.2rem;
+}
+
+/* Right Section Layout */
+.right-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    /* max-width: 700px; */
+    width: 100%;
+
+    /* width: 90%;
+    margin: 0 auto; */
+}
+
+.content-box {
+
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.705);
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.content-box .content-text {
+    text-align: center;
+}
+
+.content-box .content-text p,
+.content-box .content-text li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+    /* display: flex; */
+    /* flex-direction: column; */
+
+}
+
+.content-box .buttons {
+    text-align: center;
+    font-size: 12px;
+}
+
+.content-box .buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ADB5;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+.content-box .buttons a:hover {
+    /* background-color: #F5F0CD; */
+    background-color: #2d6d7b;
+    transition: 0.3s ease;
+}
+
+/* Specific Layout Styling for Right Content */
+.right-content .explanation-box {
+    grid-row: 1;
+}
+
+.bottom-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.bottom-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+span {
+    color: #00ADB5;
+    font-size: 17px;
+}
+
+/* New Section: Why Choose Us */
+#why-choose-us {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 40px 65px;
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.why-left {
+    max-width: 40%;
+}
+
+.why-left h2 {
+    font-size: 1.7rem;
+    color: #00ADB5;
+}
+
+.why-right {
+    max-width: 50%;
+}
+
+.why-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-right ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+/*CONTACT FORM*/
+main {
+    margin-top: 30px;
+}
+
+/*Main box from form*/
+/* Make sure that hidden fields are excluded from validation */
+
+
+#form-box,
+#confirmation-paid,
+#cancel-box,
+#faqs-box {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 50px 60px 60px 60px;
+    max-width: 70%;
+    margin: 0px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+
+
+/*title from contact form box*/
+.book-h2-form,
+.title {
+    color: #000000;
+    align-content: center;
+    text-align: center;
+    font-size: 2.1rem;
+    padding: 0px 10px 33px 10px;
+    text-shadow: 0px 2px 0px rgba(101, 255, 242, 0.28);
+
+}
+
+.book-p-form,
+#confirmation-paid p {
+    text-align: center;
+}
+
+.book-p-form {
+    font-size: 1rem;
+}
+
+/*POSItionig from form*/
+#booking-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the left */
+    width: 100%;
+    /* Take up full width of row */
+    max-width: 290px;
+    /* Limit max width of inputs */
+    position: relative;
+    /* Required for positioning error messages */
+    margin-top: 5px;
+
+
+}
+
+/*Style for text below lisence input*/
+.below-lisence {
+    font-size: 13px;
+    padding-top: 2px;
+    text-align: start;
+    color: black;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #000000;
+
+}
+
+/*styls div dor price display it gived background also for the FAqs paragrapg*/
+#Selected-dates {
+    font-size: 14px;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Make text bold for visibility */
+    text-align: center;
+}
+
+.paragraph,
+.paragraph-cancel-text {
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #EEEEEE;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.div-total-price {
+    display: flex;
+    flex-direction: column;
+    /* Ensure price and days are stacked */
+    align-items: center;
+    /* Align text to the left */
+    width: 80%;
+    margin: 0px auto;
+    background-color: #EEE;
+    padding: 24px;
+    min-height: 50px;
+    /* Optional: Set a consistent height for the block */
+}
+
+/*INPUTS*/
+#question-mark {
+    cursor: pointer;
+    position: relative;
+
+    /* Add some space between the label and the icon */
+    width: 18px;
+    height: 18px;
+}
+
+#question-div {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    z-index: 100;
+    border-radius: 4px;
+    font-size: 10px;
+    width: 250px;
+
+}
+
+.hidden {
+    display: none;
+}
+
+
+::placeholder {
+    color: #555;
+    font-size: 15px;
+}
+
+input,
+select {
+    border: #00ADB5 1px solid;
+    /* width: var(--width-inputs); */
+    width: 300px;
+    border-radius: 5px;
+    max-width: 100%;
+    height: 30px;
+    padding: 20px 10px 20px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0.3rem #dfd9d9;
+    /* font-size: 13px; */
+}
+
+select {
+    padding: 5px 10px;
+    /* Smaller padding for select */
+    height: 40px;
+    /* Adjust height to match other inputs */
+    box-sizing: border-box;
+
+
+
+    background-color: white;
+    /* Match the input background */
+    background-size: 10px 10px;
+    line-height: 30px;
+    /* Matches input height */
+    text-indent: 5px;
+}
+
+
+input:focus {
+    outline-color: #00ADB5;
+
+}
+
+input[type="date"],
+input[type="time"],
+select {
+    font-size: 15px;
+    color: #555;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background-color: #00ADB5;
+    height: 20px;
+    position: relative;
+    width: 20px;
+    z-index: 0;
+    border-radius: 5px;
+
+
+
+}
+
+#select-option:focus {
+    outline-color: #00ADB5;
+}
+
+.hidden-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+/*SUBMIT BUTTON STULES*/
+#submit-btn:disabled {
+    background-image: linear-gradient(144deg, #B3B3B3, #8F8F8F 50%, #B3B3B3);
+    color: #CCCCCC;
+    cursor: not-allowed;
+    box-shadow: none;
+    /* background-color: #111; */
+}
+
+#submit-btn {
+    align-items: center;
+    background-color: #00ADB5;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 180px;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+#submit-btn:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+/* Prevent movement when disabled */
+#submit-btn:disabled:hover:after {
+    transform: translate(8px, 8px);
+    /* No movement */
+}
+
+#submit-btn:hover:after {
+    transform: translate(0, 0);
+}
+
+
+#submit-btn:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+#submit-btn:hover {
+    outline: 0;
+}
+
+.name {
+    font-size: 20px;
+}
+
+/*STYLES OF CONFIRMATION UI RESPONSE*/
+#confirmation-text {
+    text-align: center;
+
+}
+
+.h3-confirm {
+    font-size: 1.6rem;
+}
+
+.para-confirmed-div {
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    margin-top: 20px;
+
+}
+
+#confirmation-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    max-width: 80%;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+    border-radius: 8px;
+}
+
+#confirmation-message p {
+    font-size: 0.9rem;
+    margin: 13px;
+}
+
+/*Response CANCEL_BOOKING*/
+
+#response-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*FAQS styls and layout*/
+/* #faqs-box {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    max-width: 70%;
+    margin: 0px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    flex-direction: column;
+    height: auto;
+    padding: 18px 10px 10px 10px;
+    margin-bottom: 40px;
+} */
+
+#faqs-box .paragraph,
+#cancel-box .paragraph {
+    padding: 20px 20px 20px 20px;
+    font-size: 1rem;
+
+}
+
+/*style for link on customer service*/
+strong a {
+    color: #00ADB5;
+    text-decoration: underline;
+    font-size: 0.8rem;
+
+}
+
+strong a:hover {
+
+    text-decoration: none;
+
+}
+
+/*FAQ title*/
+/* .title {
+    font-size: 2.2rem;
+    text-align: center;
+    text-shadow: 0px 2px 0px rgba(101, 255, 242, 0.28);
+    padding: 25px 10px 35px 10px;
+} */
+
+#faqs-div {
+    min-height: auto;
+    width: 80%;
+    /* Ensures the FAQ section takes up the full width */
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* Makes children span the full width */
+}
+
+/* FAQ Category */
+
+
+/* FAQ Item */
+.faq {
+    width: 100%;
+    /* Take full width of the parent container */
+    margin-top: 1.6rem;
+    padding: 1rem;
+    /* Add padding for a clean layout */
+    border-bottom: 2px solid #00ADB5;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*title for questions FAQ*/
+.question h6 {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #454444;
+
+}
+
+.question img {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+/*width of the box of the answer*/
+.answer {
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    /* Smooth rotation transition */
+}
+
+.answer p {
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Show answer when FAQ is active */
+.faq.active .answer {
+    max-height: 300px;
+
+}
+
+/*Rotate icon when clicked*/
+.arrow-icon {
+    transition: transform 1s ease-in-out;
+    /* Smooth transition for rotation */
+}
+
+.arrow-icon.rotate {
+    transform: rotate(180deg);
+    /* Rotate the arrow 180 degrees */
+}
+
+/*Footer styles*/
+/*map responsive*/
+.google-map {
+    position: relative;
+    width: 100%;
+    /* Full width of the parent container */
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Optional: Add rounded corners for a polished look */
+    margin: 0px auto;
+}
+
+.google-map iframe {
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Responsive width */
+    height: 100%;
+    /* Responsive height */
+    border: 0;
+    /* Remove border */
+    margin: 0px auto;
+}
+
+footer {
+
+    max-width: 70%;
+    margin: 0px auto;
+
+    background-color: #000000;
+}
+
+#footer-box {
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+
+    color: #8e8d8d;
+}
+
+.footer-categories {
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    margin: 50px;
+
+
+}
+
+.footer-categories p {
+    color: #00ADB5;
+
+
+}
+
+.footer-categories ul li {
+    list-style: none;
+    line-height: 1.4;
+    
+
+}
+.footer-categories ul li a{
+    
+    color: #8e8d8d;
+}
+
+.footer-categories ul {
+    list-style: none;
+    margin-bottom: 18px
+}
+
+#top-btn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 6%;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    /* width: 50px;
+    height: 50px; */
+
+
+}
+
+/*Styles for confirmation.ejs*/
+/* #confirmation-paid {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 80px;
+    max-width: 70%;
+    margin: 0px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: auto;
+    margin-bottom: 30px;
+} */
+
+.h3-confirm {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.h3-confirm .name {
+    font-size: 1.6rem;
+
+}
+
+#confirmation-paid p {
+    margin: 5px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contact {
+    font-size: 1.1rem;
+}
+
+#new-booking-btn {
+
+
+    background-color: #00ADB5;
+    color: white;
+
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* width: 30%; */
+    margin: 0px auto;
+    border: #00ADB5 1px solid;
+    margin-top: 10px;
+}
+
+#new-booking-btn:hover {
+    /* background-color: #F5F0CD; */
+    background-color: #2d6d7b;
+    transition: 0.3s ease;
+}
+
+/**cancel-booking.ejs/*/
+
+.paragraph-cancel-text {
+    text-align: justify;
+    
+    font-size: 1.1rem;
+}
+
+@media (max-width: 1308px) {
+    .left-content h1 {
+        font-size: 1.9rem;
+    }
+
+    #top-btn {
+        bottom: 20px;
+        right: 5%;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 1089px) {
+    span {
+        
+        font-size: 13px;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    #nav a {
+        font-size: 13px;
+    }
+
+    /* Adjust container layout */
+    #img-container .content {
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center elements horizontally */
+        padding: 20px;
+        /* Add padding for spacing */
+        text-align: center;
+        /* Center-align text */
+    }
+
+
+    /* Ensure title is on top */
+    #img-container .left-content {
+        order: 1;
+        /* Ensure the title comes first */
+        margin-bottom: 20px;
+        /* Add space below the title */
+        width: 100%;
+        /* Full width for the title */
+    }
+
+    #img-container .left-content h1 {
+        font-size: 1.7rem;
+        /* Adjust font size for smaller screens */
+        line-height: 1.4;
+        /* Improve readability */
+    }
+
+    /* Stack content boxes */
+    .right-content {
+        order: 2;
+        /* Ensure it comes after the title */
+        display: flex;
+        flex-direction: column;
+        /* Stack content vertically */
+        gap: 20px;
+        /* Add space between boxes */
+        width: 100%;
+        /* Take up full width */
+    }
+
+    .content-box {
+        width: 100%;
+        /* Make content boxes full width */
+        max-width: 500px;
+        /* Optional: Limit max width for better visuals */
+        margin: 0 auto;
+        /* Center content boxes */
+    }
+
+    .content-box .content-text p {
+        font-size: 1rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    .content-box .buttons a {
+        font-size: 0.8rem;
+        /* Adjust button size */
+        padding: 10px 20px;
+        /* Adjust button padding */
+        display: block;
+        /* Ensure buttons stack properly */
+        margin: 10px auto;
+        /* Center align buttons */
+    }
+
+    /* #form-box,
+    #faq-box,
+    #cancel-box {
+        width: 90%;
+        /* Increase width for smaller screens */
+        /* padding: 20px;
+
+    } */ 
+
+
+    #footer-box {
+        flex-direction: column;
+        /* Stack categories vertically */
+        text-align: center;
+    }
+
+    .footer-categories {
+        margin: 20px;
+        padding: 0px;
+        /* Adjust margins for smaller screens */
+    }
+
+    .google-map iframe {
+        width: 56%;
+        height: 70%;
+        margin: 0px auto;
+    }
+}
+
+@media(max-width: 958px) {
+    .content-box .content-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Center and shrink the form */
+    #booking-form {
+        margin: 0 auto;
+        /* Center the form horizontally */
+        width: 100%;
+        /* Take full width of the screen */
+        max-width: 400px;
+        /* Limit the form's maximum width */
+    }
+
+    .row {
+        flex-direction: column;
+        /* Stack inputs vertically */
+        align-items: center;
+        /* Center-align inputs */
+        margin: 3px auto;
+        /* Center the row in the container */
+        width: 90%;
+    }
+
+    .form-group {
+        width: 100%;
+        /* Ensure inputs take up full width of the form */
+        /* Shrink input width for smaller screens */
+        margin: 10px auto;
+        /* Add spacing and center-align */
+        text-align: center;
+        /* Center-align labels and inputs */
+    }
+
+    .why-left h2 {
+        font-size: 1.4rem;
+    }
+
+    .why-right ul li {
+        font-size: 0.8rem;
+    }
+
+
+
+}
+
+@media(max-width: 830px) {
+
+    .book-h2-form,
+    .title {
+        font-size: 1.8rem;
+        padding: 0px 10px 15px 10px;
+    }
+
+
+
+    .content-box .content-text p {
+        font-size: 0.9rem;
+    }
+
+
+    .content-box {
+        padding: 15px;
+        /* Ajusta el relleno interno */
+        font-size: 0.9rem;
+        /* Reduce ligeramente el tamaño del texto */
+    }
+
+    .content-box .buttons a {
+        font-size: 0.7rem;
+        /* Reduce el tamaño de los botones */
+        padding: 8px 12px;
+        /* Ajusta el relleno de los botones */
+    }
+
+    /* Ajustar el contenedor principal */
+    #why-choose-us {
+        /* Ajusta la posición de los elementos */
+        align-items: center;
+        min-height: auto;
+        /* Permite que crezca verticalmente */
+        flex-wrap: wrap;
+        padding: 30px 60px;
+    }
+
+    .why-left,
+    .why-right {
+        max-width: 100%;
+        /* Permite que ocupen todo el ancho */
+        margin-bottom: 20px;
+        /* Añade un espacio entre ellos */
+    }
+
+
+
+    .why-left h2 {
+        font-size: 1.5rem;
+    }
+
+    /*faqs container*/
+    #faqs-box,
+    #cancel-box,
+    #form-box,#confirmation.paid {
+        padding: 30px 25px 20px 25px
+    }
+
+    .bottom-container {
+        grid-template-columns: 1fr;
+        /* Apila las cajas una debajo de otra */
+        gap: 15px;
+        /* Espacio entre las cajas */
+    }
+
+    .footer-categories p {
+        font-size: 0.9rem;
+    }
+
+    .footer-categories ul li {
+        font-size: 0.8rem;
+    }
+
+    /*UI RESPONSE CONFIRMATION PENDING BOOKING*/
+    #confirmation-message {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .h3-confirm {
+        font-size: 1.4rem;
+    }
+
+    .h3-confirm .name {
+        font-size: 1.3rem;
+    }
+
+    #confirmation-paid p {
+        font-size: 0.9rem;
+        margin: 4px auto;
+    }
+
+    #confirmation-paid .contact {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    #nav ul {
+        align-items: center;
+    }
+
+    #img-container .content {
+        flex-direction: column;
+        /* Stack items vertically */
+        text-align: center;
+        /* Center-align text */
+        padding: 20px;
+        /* Adjust padding */
+    }
+
+    #img-container .left-content {
+        order: 1;
+        /* Ensure title comes first */
+        margin-bottom: 20px;
+        /* Add spacing below the title */
+    }
+
+    #img-container .left-content h1 {
+        font-size: 1.8rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    .right-content {
+        order: 2;
+        /* Ensure right-content is below the title */
+        width: 100%;
+        /* Take full width */
+    }
+
+    .content-box {
+        padding: 15px;
+        /* Reduce padding for better fit */
+    }
+
+    .content-box .content-text p {
+        font-size: 0.9rem;
+        /* Slightly reduce text size */
+    }
+
+    .content-box .buttons a {
+        font-size: 0.70rem;
+        /* Adjust button size */
+        padding: 8px 16px;
+        /* Reduce button padding */
+    }
+
+
+
+
+    #top-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .below-lisence {
+        font-size: 11px;
+
+    }
+
+    /*RESPONSIVE UI FOR PENDING*/
+    #confirmation-paid {
+        padding: 40px;
+    }
+
+    /*Footer responsive*/
+    input,
+    select {
+        width: 100%;
+        /* Take full width */
+        height: 35px;
+        /* Adjust height */
+        padding: 8px;
+        /* Reduce padding */
+        font-size: 14px;
+        /* Reduce font size */
+    }
+
+    /*UI RESPONSE /CONFIRMATION PAID BOOKING*/
+
+
+    .confirmation-paid p {
+        font-size: 0.8rem;
+        margin: 5px;
+    }
+
+    #new-booking-btn {
+        padding: 10px 16px;
+        font-size: 10px;
+        width: 100px;
+
+    }
+
+    .contact {
+        font-size: 0.8rem !important;
+    }
+
+    /*FAQ*/
+    .question h6 {
+
+        font-size: 0.9rem;
+
+
+    }
+
+    #faqs-box .paragraph,
+    #cancel-box .paragraph {
+        padding: 20px 20px 20px 20px;
+        font-size: 0.9rem;
+    }
+
+    #faqs-div {
+
+        width: 100%;
+    }
+
+    .paragraph,
+    .paragraph-cancel-text {
+        width: auto;
+    }
+
+    /*Response CANCEL_BOOKING*/
+
+    #response-message {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    #submit-btn {
+        padding: 16px 32px;
+    }
+}
+
+@media (max-width: 678px) {
+    #title-nav-bar-container {
+        flex-direction: column;
+
+    }
+
+    #nav ul {
+
+        gap: 15px;
+    }
+
+    #nav li {
+        margin-left: 0px;
+        font-size: 11px;
+
+    }
+
+    .book-p-form {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    /* #title-nav-bar-container {
+        flex-direction: column;
+
+    }
+
+    #nav ul {
+       
+        gap: 20px;
+    }
+
+    #nav li {
+        margin-left: 0px;
+        margin-bottom: 20px;
+
+    } */
+    #nav a {
+        font-size: 10px;
+    }
+
+    #why-choose-us {
+        padding: 30px 25px;
+    }
+
+    .book-h2-form,
+    .title {
+        font-size: 1.5rem;
+
+    }
+
+    .book-p-form {
+        font-size: 0.8rem;
+    }
+
+    .div-total-price {
+        font-size: 0.9rem;
+    }
+
+    /*BOPOKING FORM*/
+
+    .form-group label {
+        font-size: 13px;
+
+    }
+
+    /*FAQ*/
+    #faqs-box,
+    #cancel-box,
+    #form-box,#confirmation-paid {
+        padding: 30px 25px 20px 25px;
+    }
+
+    #question-mark {
+
+        width: 16px;
+        height: 16px;
+    }
+
+    .question img {
+        margin-left: 5px;
+        width: 17px;
+        height: 17px;
+    }
+
+    .question h6 {
+        font-size: 0.8rem;
+    }
+    #faqs-div {
+
+       margin-top: 10px;
+    }
+    .answer p {
+        font-size: 0.7rem;
+    }
+    .footer-categories {
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    #confirmation-text h3 {
+        font-size: 1.2rem;
+    }
+
+    /*UI RESPONSE PENDING*/
+    /* span {
+        color: #00ADB5;
+        font-size: 12px;
+    } */
+    #confirmation-message p {
+        font-size: 11px;
+        margin: 7px auto;
+    }
+
+    .h3-confirm .name {
+        font-size: 1.2rem;
+    }
+    span {
+        
+        font-size: 11px;
+    }
+    /*CANCEL ENDPOINT*/
+
+    .paragraph-cancel-text {
+
+        margin-top: 10px;
+    }
+
+    /* UI RESPONSE CONFIRMATION PENDING BOOKING
+    #confirmation-message {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    #confirmation-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .h3-confirm .name {
+        font-size: 1.1rem;
+    }
+
+    #confirmation-message p {
+        font-size: 11px;
+        margin: 7px auto;
+    }
+
+    #confirmation-message span {
+        font-size: 13px;
+
+
+    } */
+    /*SUBMIT BUTTON*/
+    #submit-btn {
+        margin-bottom: 15px;
+        margin-top: 20px;
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #submit-btn:disabled {
+        background-image: linear-gradient(144deg, #B3B3B3, #8F8F8F 50%, #B3B3B3);
+    }
+
+    #submit-btn:after {
+        top: 0px;
+        left: 0px;
+        height: 100%;
+
+    }
+
+    #submit-btn:hover:after {
+        transform: translate(1px, 2px);
+        /* Keep shadow below button */
+    }
+
+}
+
+
+
+@media(max-width: 420px) {
+
+    #img-container .left-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .content-box .content-text p {
+        font-size: 0.7rem;
+    }
+
+    .content-box .buttons a {
+        font-size: 0.6rem;
+        padding: 5px 12px;
+    }
+
+    .why-left h2 {
+        font-size: 1.2rem;
+    }
+
+    .why-right ul li {
+        font-size: 0.7rem;
+    }
+
+    .book-h2-form,
+    .title {
+        font-size: 1.2rem;
+        /* padding: 10px 10px 15px 10px */
+    }
+
+    .book-p-form {
+        font-size: 0.7rem;
+    }
+
+    .form-group {
+        margin: 3px auto;
+    }
+
+    .form-group label {
+        font-size: 10px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        /* Take full width */
+        height: 30px;
+        /* Further adjust height */
+        padding: 6px;
+        /* Further reduce padding */
+        font-size: 12px;
+        /* Smaller font for smaller screens */
+    }
+
+    .div-total-price {
+        padding: 12px;
+        font-size: 10px;
+    }
+
+    #Selected-dates {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+
+    #top-btn {
+        width: 30px;
+        height: 30px;
+        right: 3%;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+
+        width: 15px;
+        height: 15px;
+    }
+
+    input[type="date"],
+    input[type="time"],
+    select {
+        font-size: 12px;
+    }
+
+
+    ::placeholder {
+        font-size: 12px;
+    }
+
+    .below-lisence {
+        font-size: 9px;
+    }
+
+    .hidden-text {
+        font-size: 0.65rem;
+    }
+
+    .faq {
+        padding: 5px;
+        margin-top: 0.8rem;
+    }
+
+
+
+    #faqs-box .paragraph,
+    #cancel-box .paragraph {
+        font-size: 0.8rem;
+        padding: 8px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .question h6 {
+        font-size: 0.7rem;
+    }
+
+    strong a {
+        font-size: 10px
+    }
+
+    /*UI RESPONSIVE PAID BOOKING*/
+
+    .h3-confirm,
+    .h3-confirm .name {
+        font-size: 1.1rem;
+    }
+
+    #confirmation-message .contact {
+        font-size: 0.7rem;
+    }
+
+    #confirmation-paid p {
+        font-size: 0.7rem;
+    }
+
+    .confirmation-message .contact {
+        font-size: 0.7rem;
+    }
+
+    /*FOOTER CATEGORIES*/
+    .footer-categories p {
+        font-size: 0.7rem;
+    }
+
+    .footer-categories ul li {
+        font-size: 0.65rem;
+    }
+
+}
