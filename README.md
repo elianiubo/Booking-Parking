@@ -27,8 +27,7 @@ Payment Integration: Stripe API
 PDF Generation: PDFKit
 
 Main page
-
-![m3kd0bbs](https://github.com/user-attachments/assets/10710480-5843-402b-8c2b-9e51492fdfc5)
+![image](https://github.com/user-attachments/assets/8697ed52-c5f6-443f-ac20-fe39d3c7bb4b)Parking Booking Project
 
 
 
