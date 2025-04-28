@@ -29,10 +29,12 @@ PDF Generation: PDFKit
 Main page
 ![image](https://github.com/user-attachments/assets/0ad9c1e0-f2fc-4917-ae3d-bd082266770f)
 
+
 Parking booking input fields
-Checks avaliability in the selected dates
+Checks availability in the selected dates
 ![image](https://github.com/user-attachments/assets/faea32d2-689d-4734-a169-5f9fb961e9a1)
-if no avaliability
+
+if no availability
 ![image](https://github.com/user-attachments/assets/1ebdcd66-8f37-4613-8b8e-e5ca983d6842)
 
 
