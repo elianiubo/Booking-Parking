@@ -1,4 +1,4 @@
-Parking Booking Project
+![image](https://github.com/user-attachments/assets/8697ed52-c5f6-443f-ac20-fe39d3c7bb4b)Parking Booking Project
 A full-stack web application for managing parking bookings with features like real-time spot availability, Stripe payment integration, and automated booking confirmations.
 
 Features
@@ -27,7 +27,8 @@ Payment Integration: Stripe API
 PDF Generation: PDFKit
 
 Main page
-![Uploading image.png…]()
+
+![m3kd0bbs](https://github.com/user-attachments/assets/10710480-5843-402b-8c2b-9e51492fdfc5)
 
 
 
