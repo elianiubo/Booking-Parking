@@ -27,7 +27,8 @@ Payment Integration: Stripe API
 PDF Generation: PDFKit
 
 Main page
-![image](https://github.com/user-attachments/assets/0ad9c1e0-f2fc-4917-ae3d-bd082266770f)
+![Uploading image.png…]()
+
 
 
 Parking booking input fields
