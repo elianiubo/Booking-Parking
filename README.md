@@ -40,4 +40,18 @@ Pending booking repsonse
 after filling out the form and email is sent. Booking is pending for 2h, this is the response of the pending booking after form is filled
 ![image](https://github.com/user-attachments/assets/a60067f3-5f49-4710-8351-11aa31da5d77)
 
+Ex of email for pending booking 
+![image](https://github.com/user-attachments/assets/9fa989f7-f01b-4904-8cb9-b304f72a75d6)
+
+After payment is completed email of confirmation is sent with the invoice generated
+![image](https://github.com/user-attachments/assets/c53baa72-fa53-4080-90c3-75df7ac8ee11)
+Ex of a generated non legal entity invoice
+![image](https://github.com/user-attachments/assets/839e3009-3810-40b1-9eea-4303db0f35f5)
+
+
+FAQ 
+![image](https://github.com/user-attachments/assets/c5343e1b-700a-41be-bcd6-69edd209adad)
+
+
+
 
